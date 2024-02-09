@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Todo Chat App</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Todo Chat App</h1>
+<form action="/add_task" method="POST">
+<input type="text" name="task" placeholder="Add a task">
+<input type="submit" value="Add">
+</form>
+<ul id="tasks">
+{% for task in tasks %}
+<li>{{ task[1] }} <a href="/delete_task/{{ task[0] }}">Delete</a></li>
+{% endfor %}
+</ul>
+</body>
+</html>
+
+
+### styles.css
+css
+body {
+font-family: Arial, sans-serif;
+}
+
+h1 {
+font-size: 2em;
+}
+
+ul {
+list-style-type: none;
+padding: 0;
+}
+
+li {
+padding: 10px;
+background-color: #eee;
+margin-bottom: 5px;
+}
+
